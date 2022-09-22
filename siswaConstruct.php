@@ -28,7 +28,7 @@ class osis extends Siswa {
     }
     
     public function intro(){
-        echo "Hello, saya {$this->na ma} adalah anggota OSIS";
+        echo "Hello, saya {$this->nama} adalah anggota OSIS";
     }
 }
     
