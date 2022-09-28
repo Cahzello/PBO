@@ -61,10 +61,7 @@ class PetugasPerpustakaan {
 }
 
 class BukuAsing extends Buku {
-    public $idBuku;
-    public $judulBuku;
-    public $pengarang;
-
+    
     public function insertData(){
         
     }
@@ -75,10 +72,7 @@ class BukuAsing extends Buku {
 }
 
 class BukuLokal extends Buku {
-    public $idBuku;
-    public $judulBuku;
-    public $pengarang;
-
+  
     public function insertData(){
         
     }
