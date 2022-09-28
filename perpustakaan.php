@@ -28,8 +28,8 @@ class Anggota {
         $this->nama = $param_nama;
     }
 
-    public function updateData(){
-
+    public function updateData($param_nama){
+        $this->nama = $param_nama;
     }
 }
 
@@ -94,5 +94,10 @@ echo "<br>";
 
 $obj_anggota->insertData(1, 'Ayu Wahyuni');
 echo $obj_anggota->readData();
+echo '<br>';
+
+$obj_anggota->updateData('Telon Mas');
+echo $obj_anggota->readData();
+
 
 ?>
