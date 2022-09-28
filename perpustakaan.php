@@ -18,8 +18,14 @@ class Anggota {
     public $id;
     public $nama;
 
-    public function insertData(){
-        
+    public function readData(){
+        $str = "Nama Anggota {$this->id} adalah {$this->nama}";
+        return $str; 
+    }
+
+    public function insertData($param_id, $param_nama){
+        $this->id = $param_id;
+        $this->nama = $param_nama;
     }
 
     public function updateData(){
@@ -81,5 +87,12 @@ class BukuLokal extends Buku {
         
     }
 }
+
+$obj_anggota = new Anggota();
+echo $obj_anggota->readData();
+echo "<br>";
+
+$obj_anggota->insertData(1, 'Ayu Wahyuni');
+echo $obj_anggota->readData();
 
 ?>
