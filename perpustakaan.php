@@ -20,6 +20,29 @@
                 <td><input type="text" name="inputNama"></td>
             </tr>
         </table>
+        <h2>Data Peminjaman</h2>
+        <table>
+            <tr>
+                <td>ID:</td>
+                <td><input type="text" name="inputId1"></td>
+            </tr>
+            <tr>
+                <td>Tanggal Pinjam:</td>
+                <td><input type="date" name="tglPinjam"></td>
+            </tr>
+            <tr>
+                <td>ID Buku:</td>
+                <td><input type="text" name="idBuku"></td>
+            </tr>
+            <tr>
+                <td>Tanggal Pengembalian:</td>
+                <td><input type="date" name="tglPengembalian"></td>
+            </tr>
+            <tr>
+                <td>ID Petugas:</td>
+                <td><input type="text" name="idPetugas"></td>
+            </tr>
+        </table>
         <input type="submit" name="btnSubmit">
     </form>
     <br>
@@ -47,7 +70,7 @@ class Anggota {
     public $nama;
 
     public function readData(){
-        $str = "Nama Anggota {$this->id} adalah {$this->nama}";
+        $str = "Nama Anggota {$this->id} adalah {$this->nama} <br>";
         return $str; 
     }
 
@@ -62,14 +85,31 @@ class Anggota {
 }
 
 class PinjamBuku {
-    public $id;
+    public $id1;
     public $tanggalPinjam;
     public $idBuku;
     public $tanggalPengembalian;
     public $idPetugas;
 
-    public function insertData(){
+    public function readData(){
+        $tsr = "ID = {$this->id1} <br> 
+        Tanggal Pinjaman = {$this->tglPinjam} <br>
+        ID Buku = {$this->idBuku} <br>
+        Tanggal Peminjama = {$this->tglPengembalian} <br>
+        ID Petugas = {$this->idPetugas}
+
         
+        ";
+        
+        return $tsr;
+    }
+
+    public function insertData($param_id, $param_tglPinjam, $param_idBuku, $param_tglPengembalian, $param_idPetugas){
+        $this-> id1 = $param_id;
+        $this-> tglPinjam = $param_tglPinjam;
+        $this-> idBuku = $param_idBuku;
+        $this-> tglPengembalian = $param_tglPengembalian;
+        $this-> idPetugas = $param_idPetugas;
     }
 
     public function updateData(){
@@ -117,6 +157,7 @@ class BukuLokal extends Buku {
 }
 
 $obj_anggota = new Anggota();
+$obj_PinjamBuku = new PinjamBuku();
 // echo $obj_anggota->readData();
 // echo "<br>";
 
@@ -129,11 +170,22 @@ $obj_anggota = new Anggota();
 
 if($_GET){
     $id = $_GET['inputId'];
+    $id1 = $_GET['inputId1'];
     $nama = $_GET['inputNama'];
+    $tglPinjam = $_GET['tglPinjam'];
+    $idBuku = $_GET['idBuku'];
+    $tglPengembalian = $_GET['tglPengembalian'];
+    $idPetugas = $_GET['idPetugas'];
+
 
     $obj_anggota->insertData($id, $nama);
     echo $obj_anggota->readData();
     echo "<br>";
+
+    $obj_PinjamBuku->insertData($id1, $tglPinjam,$idBuku, $tglPengembalian, $idPetugas );
+    echo $obj_PinjamBuku->readData();
+    echo "<br>";
+
 }
 
 ?>
