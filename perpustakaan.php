@@ -1,3 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form</title>
+</head>
+<body>
+    <h1>Form</h1>
+    <form action="perpustakaan.php" method="get">
+        <h2>Data Anggota</h2>
+        <table>
+            <tr>
+                <td>ID:</td>
+                <td><input type="text" name="inputid"></td>
+            </tr>
+            <tr>
+                <td>Nama:</td>
+                <td><input type="text" name="inputNama"></td>
+            </tr>
+        </table>
+        <input type="submit" name="btnSubmit"gi>
+    </form>
+</body>
+</html>
+
 <?php 
 
 class Buku {
