@@ -8,7 +8,7 @@
 </head>
 <body>
     <h1>Form</h1>
-    <form action="perpustakaan.php" method="get">
+    <form action="perpustakaan.php" method="GET">
         <h2>Data Anggota</h2>
         <table>
             <tr>
