@@ -13,15 +13,16 @@
         <table>
             <tr>
                 <td>ID:</td>
-                <td><input type="text" name="inputid"></td>
+                <td><input type="text" name="inputId"></td>
             </tr>
             <tr>
                 <td>Nama:</td>
                 <td><input type="text" name="inputNama"></td>
             </tr>
         </table>
-        <input type="submit" name="btnSubmit"gi>
+        <input type="submit" name="btnSubmit">
     </form>
+    <br>
 </body>
 </html>
 
@@ -116,15 +117,23 @@ class BukuLokal extends Buku {
 }
 
 $obj_anggota = new Anggota();
-echo $obj_anggota->readData();
-echo "<br>";
+// echo $obj_anggota->readData();
+// echo "<br>";
 
-$obj_anggota->insertData(1, 'Ayu Wahyuni');
-echo $obj_anggota->readData();
-echo '<br>';
+// $obj_anggota->insertData(1, 'Ayu Wahyuni');
+// echo $obj_anggota->readData();
+// echo '<br>';
 
-$obj_anggota->updateData('Telon Mas');
-echo $obj_anggota->readData();
+// $obj_anggota->updateData('Telon Mas');
+// echo $obj_anggota->readData();
 
+if($_GET){
+    $id = $_GET['inputId'];
+    $nama = $_GET['inputNama'];
+
+    $obj_anggota->insertData($id, $nama);
+    echo $obj_anggota->readData();
+    echo "<br>";
+}
 
 ?>
