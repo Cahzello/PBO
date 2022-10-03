@@ -92,7 +92,8 @@ class PinjamBuku {
     public $idPetugas;
 
     public function readData(){
-        $tskr = "ID = {$this->id1} <br> 
+        $tskr = "
+        ID = {$this->id1} <br> 
         Tanggal Pinjaman = {$this->tglPinjam} <br>
         ID Buku = {$this->idBuku} <br>
         Tanggal Peminjama = {$this->tglPengembalian} <br>
