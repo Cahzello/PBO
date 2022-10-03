@@ -92,7 +92,7 @@ class PinjamBuku {
     public $idPetugas;
 
     public function readData(){
-        $tsr = "ID = {$this->id1} <br> 
+        $tskr = "ID = {$this->id1} <br> 
         Tanggal Pinjaman = {$this->tglPinjam} <br>
         ID Buku = {$this->idBuku} <br>
         Tanggal Peminjama = {$this->tglPengembalian} <br>
@@ -101,7 +101,7 @@ class PinjamBuku {
         
         ";
         
-        return $tsr;
+        return $tskr;
     }
 
     public function insertData($param_id, $param_tglPinjam, $param_idBuku, $param_tglPengembalian, $param_idPetugas){
