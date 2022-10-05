@@ -165,18 +165,23 @@ if (isset($_POST['simpan'])) {
 
     if($jenis == "kucing") { 
         $sikucing->jalan();
+        echo "<br>";
         echo $sikucing->cirikhusus();
     } else if ($jenis == "ular") {
         $siular->bisa();
+        echo "<br>";
         echo $siular->cirikhusus();
     } else if ($jenis == "burung") {
         $siburung->terbang();
+        echo "<br>";
         echo $siburung->cirikhusus();
     } else if ($jenis == "hamster"){
         $sihamster->kecil();
+        echo "<br>";
         echo $sihamster->cirikhusus();
     } else if ($jenis == "ikan") {
         $siikan->berenang();
+        echo "<br>";
         echo  $siikan->cirikhusus();
     }
 
