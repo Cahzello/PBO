@@ -17,6 +17,7 @@ if($_GET){
     <title>Penitipan Form</title>
 </head>
 <body>
+    <form method="post" action="">
     <h1>Penitipan Hewan</h1>
     <table>
         <tr>
@@ -50,6 +51,8 @@ if($_GET){
             <td>&nbsp;&nbsp;<input type="submit" name="simpan" value="simpan"></td>
         </tr>
     </table>
+
+    </form>
 </body>
 </html>
 
@@ -69,7 +72,7 @@ if (isset($_POST['simpan'])) {
             echo "Usia" . $this->jenis . " : " . $this->usia . "<br>";
             echo "Ciri-ciri :<br>";
             echo "-Ciri-ciri umum hewan yang bisa dititipkan adalah hewan yang tidak beruara <br>";
-            echo "-Ciri-ciri umum " . $this->jenis . "yaitu ";
+            echo "-Ciri-ciri umum " . $this->jenis . " yaitu ";
         }
 
     }
@@ -84,7 +87,7 @@ if (isset($_POST['simpan'])) {
             echo "Berjalan";
         }
         public function cirikhusus(){
-            return "-Ciri-ciri khusus " . $this->jenis . "yaitu " . $this-> khusus;
+            return "-Ciri-ciri khusus " . $this->jenis . " yaitu " . $this-> khusus;
         }
     }
 
@@ -94,7 +97,7 @@ if (isset($_POST['simpan'])) {
             echo "Berbisa";
         }
         public function cirikhusus(){
-            return "-Ciri-ciri Khusus " . $this->jenis . "yaitu " . $this->khusus;
+            return "-Ciri-ciri Khusus " . $this->jenis . " yaitu " . $this->khusus;
         }
     }
     
@@ -104,7 +107,7 @@ if (isset($_POST['simpan'])) {
             echo "Terbang";
         }
         public function cirikhusus(){
-            return "-Ciri-ciri Khusus " . $this->jenis . "yaitu " . $this->khusus ;
+            return "-Ciri-ciri Khusus " . $this->jenis . " yaitu " . $this->khusus ;
         }
         
     }
@@ -115,7 +118,7 @@ if (isset($_POST['simpan'])) {
             echo "kecil";
         }
         public function cirikhusus(){
-            return "-Ciri-ciri Khusus " . $this->jenis . "yaitu " . $this->khusus ;
+            return "-Ciri-ciri Khusus " . $this->jenis . " yaitu " . $this->khusus ;
         }
         
     }
@@ -126,7 +129,7 @@ if (isset($_POST['simpan'])) {
             echo "Berenang";
         }
         public function cirikhusus(){
-            return "-Ciri-ciri Khusus " . $this->jenis . "yaitu " . $this->khusus ;
+            return "-Ciri-ciri Khusus " . $this->jenis . " yaitu " . $this->khusus ;
         }
 
     }
@@ -178,7 +181,7 @@ if (isset($_POST['simpan'])) {
     }
 
     echo "<br><br><a href=\"titipkan.php\"></a>";
-    
+
 }
 
 
