@@ -1,9 +1,9 @@
 <?php 
 
 if($_GET){
-    $nama=$_GET['nama'];
-    $no=$_GET['no'];
-    $alamat=$_GET['alamat'];
+    $nama = $_GET['nama'];
+    $no = $_GET['no'];
+    $alamat = $_GET['alamat'];
 }
 
 ?>
@@ -23,40 +23,40 @@ if($_GET){
 </head>
 <body>
     <form method="POST" action="">
-    <h1>Penitipan Hewan</h1>
-    <table>
-        <tr>
-            <td>Nama Hewan</td>
-            <td>: <input type="text" name="namaHewan"></td>
-        </tr>
-        <tr>
-            <td>Jenis Hewan</td>
-            <td>: <select name="jh" id="">
-                <option value="kucing">Kucing</option>
-                <option value="ular">Ular</option>
-                <option value="burung">Burung</option>
-                <option value="hamster">Hamster</option>
-                <option value="ikan">Ikan</option>
-            </select></td>
-        </tr>
-        <tr>
-            <td>Ciri-ciri</td>
-            <td>: <input type="text" name="cirinya"></td>
-        </tr>
-        <tr>
-            <td>Berat</td>
-            <td>: <input type="text" name="berat"></td>
-        </tr>
-        <tr>
-            <td>Usia</td>
-            <td>: <input type="text" name="usia"></td>
-        </tr>
-        <tr>
-            <td></td>
-            <td>&nbsp;&nbsp;<input type="submit" name="simpan" value="simpan"></td>
-        </tr>
-    </table>
-
+        <h1>Penitipan Hewan</h1>
+        <table>
+            <tr>
+                <td>Nama Hewan</td>
+                <td>: <input type="text" name="namaHewan"></td>
+            </tr>
+            <tr>
+                <td>Jenis Hewan</td>
+                <td>: <select name="jh">
+                    <option>-</option>
+                    <option value="kucing">Kucing</option>
+                    <option value="ular">Ular</option>
+                    <option value="burung">Burung</option>
+                    <option value="hamster">Hamster</option>
+                    <option value="ikan">Ikan</option>
+                </select></td>
+            </tr>
+            <tr>
+                <td>Ciri-ciri</td>
+                <td>: <input type="text" name="cirinya"></td>
+            </tr>
+            <tr>
+                <td>Berat</td>
+                <td>: <input type="text" name="berat"></td>
+            </tr>
+            <tr>
+                <td>Usia</td>
+                <td>: <input type="text" name="usia"></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td>&nbsp;&nbsp;<input type="submit" name="simpan" value="simpan"></td>
+            </tr>
+        </table>
     </form>
 </body>
 </html>
@@ -168,7 +168,7 @@ if (isset($_POST['simpan'])) {
     $siikan->jenis = $_POST['jh'];
     $siikan->khusus = $_POST['cirinya'];
 
-    if($jenis == "kucing") { 
+    if ($jenis == "kucing") { 
         $sikucing->jalan();
         echo "<br>";
         echo $sikucing->cirikhusus();
@@ -190,10 +190,8 @@ if (isset($_POST['simpan'])) {
         echo  $siikan->cirikhusus();
     }
 
-    echo "<br><br><a href=\"titipkan.php\">Titipkan</a>";
+    echo"<br><br><a href=\"titipkan.php\">Titipkan</a>";
     
-
-
 }
 
 ?>

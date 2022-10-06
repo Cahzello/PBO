@@ -7,7 +7,7 @@
     <title>titipkan</title>
 </head>
 <body>
-    <form action="post">
+    <form action="POST">
         <h1>Penitipan Hewan</h1>
         <table>
             <tr>
