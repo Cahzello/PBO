@@ -168,15 +168,12 @@ if (isset($_POST['simpan'])) {
     $siikan->jenis = $_POST['jh'];
     $siikan->khusus = $_POST['cirinya'];
 
-<<<<<<< HEAD
+
     $namaHewan = $_POST['namaHewan'];
     $khusus = $_POST['cirinya'];
     $jenis = $_POST['jh'];
 
     if($jenis == "kucing") { 
-=======
-    if ($jenis == "kucing") { 
->>>>>>> fb319123770a1ed327ad1be236edccc891b02822
         $sikucing->jalan();
         echo "<br>";
         echo $sikucing->cirikhusus();
@@ -198,13 +195,9 @@ if (isset($_POST['simpan'])) {
         echo  $siikan->cirikhusus();
     }
 
-<<<<<<< HEAD
     echo "<br><br><a href=\"titipkan.php?nama=$nama&no=$no&namaHewan=$namaHewan&jenis=$jenis&ciri=$khusus\">Titipkan</a>";
 
-=======
-    echo"<br><br><a href=\"titipkan.php\">Titipkan</a>";
-    
->>>>>>> fb319123770a1ed327ad1be236edccc891b02822
+
 }
 
 ?>
