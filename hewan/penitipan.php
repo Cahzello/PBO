@@ -15,6 +15,11 @@ if($_GET){
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Penitipan Form</title>
+    <style>
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+        }
+    </style>
 </head>
 <body>
     <form method="post" action="">
@@ -163,6 +168,10 @@ if (isset($_POST['simpan'])) {
     $siikan->jenis = $_POST['jh'];
     $siikan->khusus = $_POST['cirinya'];
 
+    $namaHewan = $_POST['namaHewan'];
+    $khusus = $_POST['cirinya'];
+    $jenis = $_POST['jh'];
+
     if($jenis == "kucing") { 
         $sikucing->jalan();
         echo "<br>";
@@ -185,7 +194,7 @@ if (isset($_POST['simpan'])) {
         echo  $siikan->cirikhusus();
     }
 
-    echo "<br><br><a href=\"titipkan.php\"></a>";
+    echo "<br><br><a href=\"titipkan.php?nama=$nama&no=$no&namaHewan=$namaHewan&jenis=$jenis&ciri=$khusus\">Titipkan</a>";
 
 }
 
