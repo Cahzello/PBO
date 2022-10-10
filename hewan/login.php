@@ -14,7 +14,7 @@
 </head>
 <body>
     <div class="mobil">
-    <form method="get" action="penitipan.php">
+    <form method="GET" action="penitipan.php">
         <table>
             <h1>Login</h1>
             <tr>

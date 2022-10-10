@@ -12,7 +12,11 @@
     </style>
 </head>
 <body>
+<<<<<<< HEAD
     <form method="post" action="">
+=======
+    <form action="POST">
+>>>>>>> fb319123770a1ed327ad1be236edccc891b02822
         <h1>Penitipan Hewan</h1>
         <table>
             <tr>
