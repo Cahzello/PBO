@@ -89,4 +89,31 @@ MariaDB [apotek]> desc obat;
 +-----------+-------------+------+-----+---------+-------+
 4 rows in set (0.008 sec)
 
+alter table obat add COLUMN tanggal_kadaluarsa DATE;
 
+MariaDB [apotek]> desc obat;
++--------------------+-------------+------+-----+---------+-------+
+| Field              | Type        | Null | Key | Default | Extra |
++--------------------+-------------+------+-----+---------+-------+
+| id_obat            | int(6)      | NO   | PRI | NULL    |       |
+| nama_obat          | varchar(30) | YES  |     | NULL    |       |
+| jenis              | varchar(30) | YES  |     | NULL    |       |
+| harga              | int(10)     | YES  |     | NULL    |       |
+| tanggal_kadaluarsa | date        | YES  |     | NULL    |       |
++--------------------+-------------+------+-----+---------+-------+
+5 rows in set (0.006 sec)
+
+alter table pemesanan add COLUMN tanggal_pemesanan DATE;
+
+MariaDB [apotek]> desc pemesanan;
++-------------------+---------+------+-----+---------+-------+
+| Field             | Type    | Null | Key | Default | Extra |
++-------------------+---------+------+-----+---------+-------+
+| id_pesanan        | int(30) | NO   | PRI | NULL    |       |
+| id_pelanggan      | int(30) | YES  |     | NULL    |       |
+| id_petugas        | int(30) | YES  |     | NULL    |       |
+| id_obat           | int(90) | YES  |     | NULL    |       |
+| jumlah_pesanan    | int(30) | YES  |     | NULL    |       |
+| tanggal_pemesanan | date    | YES  |     | NULL    |       |
++-------------------+---------+------+-----+---------+-------+
+6 rows in set (0.006 sec)
