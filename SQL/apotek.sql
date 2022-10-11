@@ -188,3 +188,15 @@ MariaDB [apotek]> desc pembeli;
 | kontak_pembeli | varchar(15) | YES  |     | NULL    |       |
 +----------------+-------------+------+-----+---------+-------+
 4 rows in set (0.005 sec)
+
+alter table petugas drop column jenis_kelamin;
+
+MariaDB [apotek]> desc petugas;
++----------------+-------------+------+-----+---------+-------+
+| Field          | Type        | Null | Key | Default | Extra |
++----------------+-------------+------+-----+---------+-------+
+| id_petugas     | int(6)      | NO   | PRI | NULL    |       |
+| nama_petugas   | varchar(30) | YES  |     | NULL    |       |
+| kontak_petugas | varchar(15) | YES  |     | NULL    |       |
++----------------+-------------+------+-----+---------+-------+
+3 rows in set (0.003 sec)
