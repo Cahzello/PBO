@@ -5,9 +5,14 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>titipkan</title>
+    <style>
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+        }
+    </style>
 </head>
 <body>
-    <form action="POST">
+    <form method="post" action="">
         <h1>Penitipan Hewan</h1>
         <table>
             <tr>
@@ -32,7 +37,7 @@
             </tr>
             <tr>
                 <td></td>
-                <td>&nbsp;&nbsp;<input type="submit" value="simpan"></td>
+                <td>&nbsp;&nbsp;<input type="Submit" value="simpan"></td>
             </tr>
         </table>
     </form>
@@ -45,7 +50,7 @@ if ($_POST){
     $lama = $_POST['lama'];
     $jenis = $_POST['jenisnya'];
     $total = 100000 * intval($lama);
-    echo "Anda menitipkan" . $jenis . "ini selama" . $lama . "dengan biaya penitipan perharinya Rp. 100.000. <br>" . "Total Menjadi " . $total;
+    echo "Anda menitipkan " . $jenis . " ini selama " . $lama . " dengan biaya penitipan perharinya Rp. 100.000. <br>" . "Total Menjadi " . $total;
 }
 
 ?>
