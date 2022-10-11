@@ -117,3 +117,62 @@ MariaDB [apotek]> desc pemesanan;
 | tanggal_pemesanan | date    | YES  |     | NULL    |       |
 +-------------------+---------+------+-----+---------+-------+
 6 rows in set (0.006 sec)
+
+ALTER TABLE pelanggan rename to pembeli;
+
+MariaDB [apotek]> desc pembeli;
++------------------+-------------+------+-----+---------+-------+
+| Field            | Type        | Null | Key | Default | Extra |
++------------------+-------------+------+-----+---------+-------+
+| id_pelanggan     | int(6)      | NO   | PRI | NULL    |       |
+| nama_pelanggan   | varchar(30) | YES  |     | NULL    |       |
+| alamat           | varchar(30) | YES  |     | NULL    |       |
+| kontak_pelanggan | varchar(15) | YES  |     | NULL    |       |
++------------------+-------------+------+-----+---------+-------+
+4 rows in set (0.007 sec)
+
+ALTER TABLE pemesanan rename to transaksi;
+
+MariaDB [apotek]> desc transaksi;
++-------------------+---------+------+-----+---------+-------+
+| Field             | Type    | Null | Key | Default | Extra |
++-------------------+---------+------+-----+---------+-------+
+| id_pesanan        | int(30) | NO   | PRI | NULL    |       |
+| id_pelanggan      | int(30) | YES  |     | NULL    |       |
+| id_petugas        | int(30) | YES  |     | NULL    |       |
+| id_obat           | int(90) | YES  |     | NULL    |       |
+| jumlah_pesanan    | int(30) | YES  |     | NULL    |       |
+| tanggal_pemesanan | date    | YES  |     | NULL    |       |
++-------------------+---------+------+-----+---------+-------+
+6 rows in set (0.008 sec)
+
+alter table pembeli change id_pelanggan id_pembeli int(6);
+alter table pembeli change nama_pelanggan nama_pembeli VARCHAR(30);
+alter table pembeli change kontak_pelanggan kontak_pembeli VARCHAR(15);
+
+MariaDB [apotek]> desc pembeli;
++----------------+-------------+------+-----+---------+-------+
+| Field          | Type        | Null | Key | Default | Extra |
++----------------+-------------+------+-----+---------+-------+
+| id_pembeli     | int(6)      | NO   | PRI | NULL    |       |
+| nama_pembeli   | varchar(30) | YES  |     | NULL    |       |
+| alamat         | varchar(30) | YES  |     | NULL    |       |
+| kontak_pembeli | varchar(15) | YES  |     | NULL    |       |
++----------------+-------------+------+-----+---------+-------+
+4 rows in set (0.006 sec)
+
+alter table transaksi change id_pelanggan id_pembeli int(30);
+
+MariaDB [apotek]> desc transaksi;
++-------------------+---------+------+-----+---------+-------+
+| Field             | Type    | Null | Key | Default | Extra |
++-------------------+---------+------+-----+---------+-------+
+| id_pesanan        | int(30) | NO   | PRI | NULL    |       |
+| id_pembeli        | int(30) | YES  |     | NULL    |       |
+| id_petugas        | int(30) | YES  |     | NULL    |       |
+| id_obat           | int(90) | YES  |     | NULL    |       |
+| jumlah_pesanan    | int(30) | YES  |     | NULL    |       |
+| tanggal_pemesanan | date    | YES  |     | NULL    |       |
++-------------------+---------+------+-----+---------+-------+
+6 rows in set (0.004 sec)
+
