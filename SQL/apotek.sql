@@ -176,3 +176,15 @@ MariaDB [apotek]> desc transaksi;
 +-------------------+---------+------+-----+---------+-------+
 6 rows in set (0.004 sec)
 
+alter table pembeli MODIFY alamat TEXT(50);
+
+MariaDB [apotek]> desc pembeli;
++----------------+-------------+------+-----+---------+-------+
+| Field          | Type        | Null | Key | Default | Extra |
++----------------+-------------+------+-----+---------+-------+
+| id_pembeli     | int(6)      | NO   | PRI | NULL    |       |
+| nama_pembeli   | varchar(30) | YES  |     | NULL    |       |
+| alamat         | tinytext    | YES  |     | NULL    |       |
+| kontak_pembeli | varchar(15) | YES  |     | NULL    |       |
++----------------+-------------+------+-----+---------+-------+
+4 rows in set (0.005 sec)
