@@ -15,9 +15,7 @@ if ($nilai > 100 || $nilai < 0){
     echo "Anda mendapatkan nilai D";
 } else if ($nilai >= 0 ) {
     echo "Anda mendapatkan nilai E";
-} else {
-    echo "nilai tidak valid";
-}
+} 
 
 ?>    
 
