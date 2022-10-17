@@ -64,6 +64,7 @@ if($_GET){
 <?php
 
 if (isset($_POST['simpan'])) {
+    
     class Hewan {
         public $namaHewan;
         public $jenis;
