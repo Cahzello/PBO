@@ -295,4 +295,14 @@ MariaDB [apotek]> select kontak_petugas from petugas where id_petugas = 'PT03';
 | 081789736056   |
 +----------------+
 
+select * from obat where harga = '15000';
+
++---------+------------+--------+-------+--------------------+
+| id_obat | nama_obat  | jenis  | harga | tanggal_kadaluarsa |
++---------+------------+--------+-------+--------------------+
+| OBT01   | VTM        | Tablet | 15000 | 2022-10-18         |
+| OBT02   | VIT B1     | Kapsul | 15000 | 2023-03-09         |
+| OBT05   | Ibu Profen | Tablet | 15000 | 2025-07-05         |
++---------+------------+--------+-------+--------------------+
+
 
