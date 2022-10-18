@@ -276,3 +276,23 @@ UPDATE `obat` SET `jenis` = 'Tablet', `tanggal_kadaluarsa` = '2025-07-05' WHERE 
 | OBT05   | Ibu Profen | Tablet | 15000 | 2025-07-05         |
 +---------+------------+--------+-------+--------------------+
 
+MariaDB [apotek]> select
++------------+----------+
+| id_pembeli | alamat   |
++------------+----------+
+| PG01       | Antapani |
+| PG02       | Cibabat  |
+| PG03       | Cibiru   |
+| PG04       | Cianjur  |
+| PG05       | Ciamis   |
++------------+----------+
+5 rows in set (0.001 sec)
+
+MariaDB [apotek]> select kontak_petugas from petugas where id_petugas = 'PT03';
++----------------+
+| kontak_petugas |
++----------------+
+| 081789736056   |
++----------------+
+
+
