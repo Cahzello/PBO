@@ -316,4 +316,15 @@ MariaDB [apotek]> select nama_obat, harga from obat;
 | Ibu Profen | 15000 |
 +------------+-------+
 
+MariaDB [apotek]> select nama_obat from obat where nama_obat like '%i%';
++------------+
+| nama_obat  |
++------------+
+| VIT B1     |
+| VIT B6     |
+| Amoxillin  |
+| Ibu Profen |
++------------+
+
+
 
