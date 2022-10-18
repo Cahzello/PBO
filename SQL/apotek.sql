@@ -276,7 +276,7 @@ UPDATE `obat` SET `jenis` = 'Tablet', `tanggal_kadaluarsa` = '2025-07-05' WHERE 
 | OBT05   | Ibu Profen | Tablet | 15000 | 2025-07-05         |
 +---------+------------+--------+-------+--------------------+
 
-MariaDB [apotek]> select
+MariaDB [apotek]> select id_pembeli, alamat from pembeli;
 +------------+----------+
 | id_pembeli | alamat   |
 +------------+----------+
