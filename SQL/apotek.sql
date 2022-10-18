@@ -200,3 +200,79 @@ MariaDB [apotek]> desc petugas;
 | kontak_petugas | varchar(15) | YES  |     | NULL    |       |
 +----------------+-------------+------+-----+---------+-------+
 3 rows in set (0.003 sec)
+
+UPDATE `pembeli` SET `id_pembeli` = 'PG05' WHERE `pembeli`.`id_pembeli` = 'PG5';
+
+insert INTO pembeli VALUES
+('PG1', 'Burhan', 'Antapani', '0822736889187'),
+('PG2', 'Keenan', 'Cibabat', '080988761524'),
+('PG3', 'Anatasya', 'Cibiru', '081982736099'),
+('PG4', 'Farida', 'Cianjur', '089573847287'),
+('PG5', 'Nisa', 'Ciamis', '087348294252');
+
++------------+--------------+----------+----------------+
+| id_pembeli | nama_pembeli | alamat   | kontak_pembeli |
++------------+--------------+----------+----------------+
+| PG1        | Burhan       | Antapani | 0822736889187  |
+| PG2        | Keenan       | Cibabat  | 080988761524   |
+| PG3        | Anatasya     | Cibiru   | 081982736099   |
+| PG4        | Farida       | Cianjur  | 089573847287   |
+| PG5        | Nisa         | Ciamis   | 087348294252   |
++------------+--------------+----------+----------------+
+
+UPDATE `petugas` SET `id_petugas` = 'PG05' WHERE `petugas`.`id_petugas` = 'PG5';
+
+alter table petugas MODIFY id_petugas varchar(6);
+
+insert into petugas VALUES
+('PT01', 'Raka', '082736789187'),
+('PT02', 'Nida', '081435761524'),
+('PT03', 'Firda', '081789736056'),
+('PT04', 'Farhan', '088343525252'),
+('PT05', 'Ridwan', '089937422357');
+
++------------+--------------+----------------+
+| id_petugas | nama_petugas | kontak_petugas |
++------------+--------------+----------------+
+| PT01       | Raka         | 082736789187   |
+| PT02       | Nida         | 081435761524   |
+| PT03       | Firda        | 081789736056   |
+| PT04       | Farhan       | 088343525252   |
+| PT05       | Ridwan       | 089937422357   |
++------------+--------------+----------------+
+
+alter table obat MODIFY id_obat varchar(6);
+
+insert into obat (id_obat, nama_obat, harga) VALUES
+('OBT01', 'VTM', '15000'),
+('OBT02', 'VIT B1', '15000'),
+('OBT03', 'VIT B6', '22000'),
+('OBT04', 'Amoxillin', '20000'),
+('OBT05', 'Ibu Profen', '15000');
+
++---------+------------+-------+-------+--------------------+
+| id_obat | nama_obat  | jenis | harga | tanggal_kadaluarsa |
++---------+------------+-------+-------+--------------------+
+| OBT01   | VTM        | NULL  | 15000 | NULL               |
+| OBT02   | VIT B1     | NULL  | 15000 | NULL               |
+| OBT03   | VIT B6     | NULL  | 22000 | NULL               |
+| OBT04   | Amoxillin  | NULL  | 20000 | NULL               |
+| OBT05   | Ibu Profen | NULL  | 15000 | NULL               |
++---------+------------+-------+-------+--------------------+
+
+UPDATE `obat` SET `jenis` = 'Tablet', `tanggal_kadaluarsa` = '2022-10-18' WHERE `obat`.`id_obat` = 'OBT01';
+UPDATE `obat` SET `jenis` = 'Kapsul', `tanggal_kadaluarsa` = '2023-03-09' WHERE `obat`.`id_obat` = 'OBT02';
+UPDATE `obat` SET `jenis` = 'Kapsul', `tanggal_kadaluarsa` = '2025-05-30' WHERE `obat`.`id_obat` = 'OBT03';
+UPDATE `obat` SET `jenis` = 'Sirup', `tanggal_kadaluarsa` = '2025-02-28' WHERE `obat`.`id_obat` = 'OBT04';
+UPDATE `obat` SET `jenis` = 'Tablet', `tanggal_kadaluarsa` = '2025-07-05' WHERE `obat`.`id_obat` = 'OBT05';
+
++---------+------------+--------+-------+--------------------+
+| id_obat | nama_obat  | jenis  | harga | tanggal_kadaluarsa |
++---------+------------+--------+-------+--------------------+
+| OBT01   | VTM        | Tablet | 15000 | 2022-10-18         |
+| OBT02   | VIT B1     | Kapsul | 15000 | 2023-03-09         |
+| OBT03   | VIT B6     | Kapsul | 22000 | 2025-05-30         |
+| OBT04   | Amoxillin  | Sirup  | 20000 | 2025-02-28         |
+| OBT05   | Ibu Profen | Tablet | 15000 | 2025-07-05         |
++---------+------------+--------+-------+--------------------+
+
