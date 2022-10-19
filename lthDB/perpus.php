@@ -27,12 +27,11 @@ $data_anggota = $db->readAnggota();
         ?>
         <tr>
             <td><?php echo $i; ?></td>
-            <td><?php echo $i; ?></td>
-            <td><?php echo $i; ?></td>
-            <td><?php echo $i; ?></td>
-            <td><?php echo $i; ?></td>
+            <td><?php echo $data['nama_anggota']; ?></td>
         </tr>
-
+        <?php
+            }
+        ?>
     </table>
 </body>
 </html>
