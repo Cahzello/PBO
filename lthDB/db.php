@@ -16,9 +16,19 @@ class database{
         }
     }
 
+    function readAnggota(){
+        $koneksi = mysqli_connect($this->dbHost, $this->dbUser, $this->dbPass, $this->dbName);
+        $query = mysqli_query($koneksi, "select * from tb_anggota");
+
+        while ($row = mysqli_fetch_array($query)){
+            $data[]= $row;
+        }
+        return $data;
+    }
 
 }
 
 $db = new database();
 $db->connectMySQL();
+$db->readAnggota();
 
