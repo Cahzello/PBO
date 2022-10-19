@@ -30,7 +30,7 @@ $data_anggota = $db->readAnggota();
             <td><?php echo $data['nama_anggota']; ?></td>
         </tr>
         <?php
-            }
+           $i++; }
         ?>
     </table>
 </body>
