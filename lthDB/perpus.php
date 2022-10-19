@@ -21,9 +21,18 @@ $data_anggota = $db->readAnggota();
             <th>No</th>
             <th>Nama</th>
         </tr>
+        <?php
+            $i = 1;
+            foreach($data_anggota as $data){
+        ?>
         <tr>
-            
+            <td><?php echo $i; ?></td>
+            <td><?php echo $i; ?></td>
+            <td><?php echo $i; ?></td>
+            <td><?php echo $i; ?></td>
+            <td><?php echo $i; ?></td>
         </tr>
+
     </table>
 </body>
 </html>
