@@ -28,7 +28,7 @@ class database{
 
     function insertAnggota($nama){
         $koneksi = mysqli_connect($this->dbHost, $this->dbUser, $this->dbPass, $this->dbName);
-        $query = mysqli_query($koneksi, "INSERT INTO tb_anggota (nama_anggota) VALUES ('$nama')");
+        $query = mysqli_query($koneksi, "INSERT INTO tb_anggota (nama_anggota) VALUE ('$nama')");
 
         if($query){
             echo "Data berhasil ditambahkan";

@@ -21,7 +21,7 @@
     </style>
 </head>
 <body>
-    <form action="db.php" method="post">
+    <form action="db.php" method="POST">
         <div class="pensi">
             Nama Anggota : <input type="text"  name="nama_anggota">
             <br>
