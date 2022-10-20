@@ -59,7 +59,7 @@ $data_petugas = $db->readPetugas();
         <tr>
             <th>No</th>
             <th>Nama</th>
-            <th>pengarang</th>
+            <th>username</th>
         </tr>
         <?php
             $i = 1;
