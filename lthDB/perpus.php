@@ -14,10 +14,20 @@ $data_petugas = $db->readPetugas();
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>DB</title>
+    <style>
+        body {
+            margin: auto;
+            text-align: center;
+        }
+
+        table {
+            margin: auto;
+        }
+    </style>
 </head>
 <body>
-    <h3 align="center" >Data Anggota Perpustakaan</h3>
-    <table border="1" cellpadding="5px" align="center" width="30%">
+    <h3>Data Anggota Perpustakaan</h3>
+    <table border="1" cellpadding="5px"  width="30%">
         <tr>
             <th>No</th>
             <th>Nama</th>
@@ -34,12 +44,15 @@ $data_petugas = $db->readPetugas();
            $i++; }
         ?>
     </table>
-    <h3 align="center">judul buku</h3>
-    <table border="1" cellpadding="5px" align="center" width="30%">
+
+        <a href="insertAnggota.php">Tambah Data Anggota</a>
+
+    <h3 >Data Judul Buku</h3>
+    <table border="1" cellpadding="5px"  width="30%">
         <tr>
             <th>No</th>
-            <th>Nama</th>
-            <th>pengarang</th>
+            <th>Nama Buku</th>
+            <th>Pengarang</th>
         </tr>
         <?php
             $i = 1;
@@ -54,12 +67,12 @@ $data_petugas = $db->readPetugas();
            $i++; }
         ?>
     </table>
-    <h3 align="center">petugas</h3>
-    <table border="1" cellpadding="5px" align="center" width="30%">
+    <h3 >Data Petugas</h3>
+    <table border="1" cellpadding="5px"  width="30%">
         <tr>
             <th>No</th>
             <th>Nama</th>
-            <th>username</th>
+            <th>Username</th>
         </tr>
         <?php
             $i = 1;
