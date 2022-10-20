@@ -62,8 +62,8 @@ class database{
 $db = new database();
 $db->connectMySQL();
 
-if(isset($_post['submitAnggota'])){
-    $nama = $_post['nama_anggota'];
+if(isset($_POST['submitAnggota'])){
+    $nama = $_POST['nama_anggota'];
     $db->insertAnggota($nama);
 }
 
