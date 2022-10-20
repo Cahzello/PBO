@@ -10,13 +10,24 @@
             margin: auto;
             text-align: center;
         }
+
+        .pensi {
+            border: 1px solid black;
+            width: 40%;
+            padding: 10px;
+            margin: auto;
+            margin-top: 15%;
+        }
     </style>
 </head>
 <body>
     <form action="db.php" method="post">
-        Nama Anggota : <input type="text"  name="nama_anggota">
-        <br>
-        <input type="submit" value="SIMPAN" name="submitAnggota">
+        <div class="pensi">
+            Nama Anggota : <input type="text"  name="nama_anggota">
+            <br>
+            <input type="submit" value="SIMPAN" name="submitAnggota">
+
+        </div>
     </form>
     <a href="perpus.php">Home</a>
 </body>

@@ -26,6 +26,18 @@ class database{
         return $data;
     }
 
+    function insertAnggota($nama){
+        $koneksi = mysqli_connect($this->dbHost, $this->dbUser, $this->dbPass, $this->dbName);
+        $query = mysqli_query($koneksi, "INSERT INTO tb_anggota (nama_anggota) VALUES ('$nama')");
+
+        if($query){
+            echo "Data berhasil ditambahkan";
+            header('location:perpus.php');
+        } else {
+            echo "Penambahan Data Gagal";
+        }
+    }
+
     function readBuku(){
         $koneksi = mysqli_connect($this->dbHost, $this->dbUser, $this->dbPass, $this->dbName);
         $query = mysqli_query($koneksi, "select * from tb_buku");
@@ -49,6 +61,14 @@ class database{
 
 $db = new database();
 $db->connectMySQL();
+
+if(isset($_post['submitAnggota'])){
+    $nama = $_post['nama_anggota'];
+    $db->insertAnggota($nama);
+}
+
+
 $db->readAnggota();
 $db->readBuku();
 $db->readPetugas();
+// $db->insertAnggota($nama);
