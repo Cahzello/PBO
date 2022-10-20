@@ -3,7 +3,8 @@
 include 'db.php';
 
 $data_anggota = $db->readAnggota();
-
+$data_buku = $db->readBuku();
+$data_petugas = $db->readPetugas();
 ?>
 
 <!DOCTYPE html>
@@ -16,7 +17,7 @@ $data_anggota = $db->readAnggota();
 </head>
 <body>
     <h3 align="center" >Data Anggota Perpustakaan</h3>
-    <table border="1" cellpadding="5px" align="center">
+    <table border="1" cellpadding="5px" align="center" width="30%">
         <tr>
             <th>No</th>
             <th>Nama</th>
@@ -28,6 +29,46 @@ $data_anggota = $db->readAnggota();
         <tr>
             <td><?php echo $i; ?></td>
             <td><?php echo $data['nama_anggota']; ?></td>
+        </tr>
+        <?php
+           $i++; }
+        ?>
+    </table>
+    <h3 align="center">judul buku</h3>
+    <table border="1" cellpadding="5px" align="center" width="30%">
+        <tr>
+            <th>No</th>
+            <th>Nama</th>
+            <th>pengarang</th>
+        </tr>
+        <?php
+            $i = 1;
+            foreach($data_buku as $data){
+        ?>
+        <tr>
+            <td><?php echo $i; ?></td>
+            <td><?php echo $data['judul_buku']; ?></td>
+            <td><?php echo $data['pengarang']; ?></td>
+        </tr>
+        <?php
+           $i++; }
+        ?>
+    </table>
+    <h3 align="center">petugas</h3>
+    <table border="1" cellpadding="5px" align="center" width="30%">
+        <tr>
+            <th>No</th>
+            <th>Nama</th>
+            <th>pengarang</th>
+        </tr>
+        <?php
+            $i = 1;
+            foreach($data_petugas as $data){
+        ?>
+        <tr>
+            <td><?php echo $i; ?></td>
+            <td><?php echo $data['nama_petugas']; ?></td>
+            <td><?php echo $data['username']; ?></td>
         </tr>
         <?php
            $i++; }

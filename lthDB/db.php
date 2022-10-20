@@ -26,9 +26,29 @@ class database{
         return $data;
     }
 
+    function readBuku(){
+        $koneksi = mysqli_connect($this->dbHost, $this->dbUser, $this->dbPass, $this->dbName);
+        $query = mysqli_query($koneksi, "select * from tb_buku");
+
+        while ($row = mysqli_fetch_array($query)){
+            $data[]= $row;
+        }
+        return $data;
+    }
+
+    function readPetugas(){
+        $koneksi = mysqli_connect($this->dbHost, $this->dbUser, $this->dbPass, $this->dbName);
+        $query = mysqli_query($koneksi, "select * from tb_petugas_perpus");
+
+        while ($row = mysqli_fetch_array($query)){
+            $data[]= $row;
+        }
+        return $data;
+    }
 }
 
 $db = new database();
 $db->connectMySQL();
 $db->readAnggota();
-
+$db->readBuku();
+$db->readPetugas();
