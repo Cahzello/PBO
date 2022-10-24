@@ -38,6 +38,18 @@ class database{
         }
     }
 
+    function hapusAnggota($id){
+        $koneksi = mysqli_connect($this->dbHost, $this->dbUser, $this->dbPass, $this->dbName);
+        $query = mysqli_query($koneksi, "DELETE FROM tb_anggota WHERE id_anggota =" . $id . "");
+
+        if($query){
+            echo "data berhasil dihapus";
+            header('location:perpus.php');
+        } else {
+            echo 'data gagal dihapus';
+        }
+    }
+
     function readBuku(){
         $koneksi = mysqli_connect($this->dbHost, $this->dbUser, $this->dbPass, $this->dbName);
         $query = mysqli_query($koneksi, "select * from tb_buku");
@@ -62,13 +74,20 @@ class database{
 $db = new database();
 $db->connectMySQL();
 
+$db->readAnggota();
+$db->readBuku();
+$db->readPetugas();
+// $db->insertAnggota($nama);
+
 if(isset($_POST['submitAnggota'])){
     $nama = $_POST['nama_anggota'];
     $db->insertAnggota($nama);
 }
 
+if(isset($_GET['aksi'])){
+    if(isset($_GET['aksi']) == 'hapus'){
 
-$db->readAnggota();
-$db->readBuku();
-$db->readPetugas();
-// $db->insertAnggota($nama);
+        $id=$_GET['id'];
+        $db->hapusAnggota($id);
+    }
+}

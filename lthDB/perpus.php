@@ -5,6 +5,8 @@ include 'db.php';
 $data_anggota = $db->readAnggota();
 $data_buku = $db->readBuku();
 $data_petugas = $db->readPetugas();
+
+
 ?>
 
 <!DOCTYPE html>
@@ -31,14 +33,19 @@ $data_petugas = $db->readPetugas();
         <tr>
             <th>No</th>
             <th>Nama</th>
+            <th>Action</th>
         </tr>
         <?php
             $i = 1;
             foreach($data_anggota as $data){
+                $id = $data['id_anggota'];
+
         ?>
         <tr>
             <td><?php echo $i; ?></td>
             <td><?php echo $data['nama_anggota']; ?></td>
+            <td><a href=<?php echo "db.php?aksi=hapus&id=$id"?>>Delete</a></td>
+            
         </tr>
         <?php
            $i++; }
