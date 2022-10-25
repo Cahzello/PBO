@@ -326,5 +326,58 @@ MariaDB [apotek]> select nama_obat from obat where nama_obat like '%i%';
 | Ibu Profen |
 +------------+
 
+select * from obat order by id_obat desc;
 
++---------+------------+--------+-------+--------------------+
+| id_obat | nama_obat  | jenis  | harga | tanggal_kadaluarsa |
++---------+------------+--------+-------+--------------------+
+| OBT05   | Ibu Profen | Tablet | 15000 | 2025-07-05         |
+| OBT04   | Amoxillin  | Sirup  | 20000 | 2025-02-28         |
+| OBT03   | VIT B6     | Kapsul | 22000 | 2025-05-30         |
+| OBT02   | VIT B1     | Kapsul | 15000 | 2023-03-09         |
+| OBT01   | VTM        | Tablet | 15000 | 2022-10-18         |
++---------+------------+--------+-------+--------------------+
+5 rows in set (0.001 sec)
+
+select * from obat order by harga asc;
+
+MariaDB [apotek]> select * from obat order by harga asc;
++---------+------------+--------+-------+--------------------+
+| id_obat | nama_obat  | jenis  | harga | tanggal_kadaluarsa |
++---------+------------+--------+-------+--------------------+
+| OBT01   | VTM        | Tablet | 15000 | 2022-10-18         |
+| OBT02   | VIT B1     | Kapsul | 15000 | 2023-03-09         |
+| OBT05   | Ibu Profen | Tablet | 15000 | 2025-07-05         |
+| OBT04   | Amoxillin  | Sirup  | 20000 | 2025-02-28         |
+| OBT03   | VIT B6     | Kapsul | 22000 | 2025-05-30         |
++---------+------------+--------+-------+--------------------+
+5 rows in set (0.001 sec)
+
+select * from obat order by nama_obat asc;
+
+MariaDB [apotek]> select * from obat order by nama_obat asc;
++---------+------------+--------+-------+--------------------+
+| id_obat | nama_obat  | jenis  | harga | tanggal_kadaluarsa |
++---------+------------+--------+-------+--------------------+
+| OBT04   | Amoxillin  | Sirup  | 20000 | 2025-02-28         |
+| OBT01   | CTM        | Tablet | 15000 | 2022-10-18         |
+| OBT05   | Ibu Profen | Tablet | 15000 | 2025-07-05         |
+| OBT02   | VIT B1     | Kapsul | 15000 | 2023-03-09         |
+| OBT03   | VIT B6     | Kapsul | 22000 | 2025-05-30         |
++---------+------------+--------+-------+--------------------+
+5 rows in set (0.001 sec)
+
+select * from pembeli order by nama_pembeli desc;
+
+MariaDB [apotek]> select * from pembeli order by nama_pembeli desc;
++------------+--------------+----------+----------------+
+| id_pembeli | nama_pembeli | alamat   | kontak_pembeli |
++------------+--------------+----------+----------------+
+| PG05       | Nisa         | Ciamis   | 087348294252   |
+| PG02       | Keenan       | Cibabat  | 080988761524   |
+| PG04       | Farida       | Cianjur  | 089573847287   |
+| PG01       | Burhan       | Antapani | 0822736889187  |
+| PG03       | Anatasya     | Cibiru   | 081982736099   |
++------------+--------------+----------+----------------+
+5 rows in set (0.001 sec)
 
