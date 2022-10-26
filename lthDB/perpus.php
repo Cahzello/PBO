@@ -131,7 +131,7 @@ $data_petugas = $db->readPetugas();
             ?>
         </table>
         <div class="btn">
-            <a href="insertBuku.php">Tambah Data Anggota</a>
+            <a href="insertBuku.php">Tambah Data Buku</a>
     
         </div>
     
@@ -160,7 +160,7 @@ $data_petugas = $db->readPetugas();
             ?>
         </table>
         <div class="btn">
-            <a href="insertPetugas.php">Tambah Data Anggota</a>
+            <a href="insertPetugas.php">Tambah Data Petugas</a>
     
         </div>
     </div>
