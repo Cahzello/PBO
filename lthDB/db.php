@@ -93,6 +93,30 @@ class database{
         }
         return $data;
     }
+
+    function insertPetugas($namaPetugas, $username){
+        $koneksi = mysqli_connect($this->dbHost, $this->dbUser, $this->dbPass, $this->dbName);
+        $query = mysqli_query($koneksi, "INSERT INTO tb_petugas_perpus (nama_petugas, username) VALUE ('$namaPetugas', '$username')");
+        
+        if($query){
+            echo "Data berhasil ditambahkan";
+            header('location:perpus.php');
+        } else {
+            echo "Penambahan Data Gagal";
+        }
+    }
+
+    function hapusPetugas($id){
+        $koneksi = mysqli_connect($this->dbHost, $this->dbUser, $this->dbPass, $this->dbName);
+        $query = mysqli_query($koneksi, "DELETE FROM tb_petugas_perpus WHERE id_petugas =" . $id . "");
+
+        if($query){
+            echo "data berhasil dihapus";
+            header('location:perpus.php');
+        } else {
+            echo 'data gagal dihapus';
+        }
+    }
 }
 
 $db = new database();
@@ -115,6 +139,13 @@ if(isset($_POST['submitBuku'])){
 
 }
 
+if(isset($_POST['submitPetugas'])){
+    $petugas = $_POST['nama_petugas'];
+    $username = $_POST['username'];
+    $db->insertPetugas($petugas, $username);
+
+}
+
 if(isset($_GET['aksi'])){
     if(isset($_GET['aksi']) == 'hapus'){
 
@@ -128,5 +159,13 @@ if(isset($_GET['aksi'])){
 
         $id=$_GET['id'];
         $db->hapusBuku($id);
+    }
+}
+
+if(isset($_GET['aksi'])){
+    if(isset($_GET['aksi']) == 'hapus'){
+
+        $id=$_GET['id'];
+        $db->hapusPetugas($id);
     }
 }

@@ -87,19 +87,25 @@ $data_petugas = $db->readPetugas();
             <th>No</th>
             <th>Nama</th>
             <th>Username</th>
+            <th>Action</th>
         </tr>
         <?php
             $i = 1;
             foreach($data_petugas as $data){
+                $id = $data['id_petugas'];
         ?>
         <tr>
             <td><?php echo $i; ?></td>
             <td><?php echo $data['nama_petugas']; ?></td>
             <td><?php echo $data['username']; ?></td>
+            <td><a href=<?php echo "db.php?aksi=hapus&id=$id"?>>Delete</a></td>  
         </tr>
         <?php
            $i++; }
         ?>
     </table>
+
+    <a href="insertPetugas.php">Tambah Data Anggota</a>
+
 </body>
 </html>
