@@ -60,20 +60,27 @@ $data_petugas = $db->readPetugas();
             <th>No</th>
             <th>Nama Buku</th>
             <th>Pengarang</th>
+            <th>Action</th>
         </tr>
         <?php
             $i = 1;
             foreach($data_buku as $data){
+                $id = $data['id_buku'];
         ?>
         <tr>
             <td><?php echo $i; ?></td>
             <td><?php echo $data['judul_buku']; ?></td>
             <td><?php echo $data['pengarang']; ?></td>
+            <td><a href=<?php echo "db.php?aksi=hapus&id=$id"?>>Delete</a></td>        
         </tr>
         <?php
            $i++; }
         ?>
     </table>
+
+    <a href="insertBuku.php">Tambah Data Anggota</a>
+
+
     <h3 >Data Petugas</h3>
     <table border="1" cellpadding="5px"  width="30%">
         <tr>
