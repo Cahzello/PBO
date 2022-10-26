@@ -1,0 +1,25 @@
+Fungsi bawaan pada php
+
+1. Fungsi untuk huruf digunakan untuk mengganti huruf besar atau huruf kecil pada karakter.
+
+    A. Fungsi "strtolower()"
+        Digunakan untuk mengubah semua karakter pada string menjadi huruf kecil.
+
+    B. Fungsi "strtoupper()"
+        Digunakan untuk mengubah semua karakter pada string menjadi huruf besar.
+
+    C. Fungsi "ucfirst()"
+        Digunakan untuk mengubah karakter pertama pada string menjadi huruf besar.
+
+    D. Fungsi "ucwords()"
+        Digunakan untuk mengubah karakter pertama dari setiap kata pada string menjadi huruf besar.
+
+2. Fungsi "trim()" digunakan untuk menghapus spasi pada awal dan akhir string.
+
+    A. Fungsi "ltrim()"
+        Digunakan untuk spasi pada awal string.
+
+    B. Fungsi "rtrim()"
+        Digunakan untuk spasi pada akhir string.
+
+3. Fungsi "substr()" digunakan untuk memotong satu atau lebih karakter dalam sebuah string.

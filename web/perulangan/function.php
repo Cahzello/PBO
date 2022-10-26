@@ -1,7 +1,12 @@
 <?php
 
 function tulis(){
-    echo "hello world!";
+    echo "01001";
 }
 
-tulis();
+
+for ($i = 1; $i < 10; $i--){
+    tulis();
+    // echo "<br>";
+    // echo "\n";
+}

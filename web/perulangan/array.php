@@ -4,10 +4,10 @@ $siswa  = array(
     "Nama" => "raisya",
     "Email" => "raisya@gmail.com",
     "Usia" => 16,
-    "Gender" => "Perempuan",
+    "Gender" => "Perempuan"
 );
 
-foreach ($siswa as $key => $element){
-    echo $key . ":" . $element;
+foreach ($siswa as $jawa => $sunda){
+    echo $jawa . ":" . $sunda;
     echo "<br>" . "\n";
 }
