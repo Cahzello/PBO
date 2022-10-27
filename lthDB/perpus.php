@@ -84,7 +84,7 @@ $data_petugas = $db->readPetugas();
             <tr>
                 <th>No</th>
                 <th>Nama</th>
-                <th>Action</th>
+                <th colspan="2">Action</th>
             </tr>
             <?php
                 $i = 1;
@@ -95,6 +95,7 @@ $data_petugas = $db->readPetugas();
             <tr>
                 <td><?php echo $i; ?></td>
                 <td><?php echo $data['nama_anggota']; ?></td>
+                <td><a href="editAnggota.php">Edit</a></td>
                 <td><a href=<?php echo "db.php?aksi=hapus&id=$id"?>>Delete</a></td>
                 
             </tr>
@@ -113,7 +114,7 @@ $data_petugas = $db->readPetugas();
                 <th>No</th>
                 <th>Nama Buku</th>
                 <th>Pengarang</th>
-                <th>Action</th>
+                <th colspan="2">Action</th>
             </tr>
             <?php
                 $i = 1;
@@ -124,6 +125,7 @@ $data_petugas = $db->readPetugas();
                 <td><?php echo $i; ?></td>
                 <td><?php echo $data['judul_buku']; ?></td>
                 <td><?php echo $data['pengarang']; ?></td>
+                <td><a href=<?php ?>>Edit</a></td>
                 <td><a href=<?php echo "db.php?aksi=hapus&id=$id"?>>Delete</a></td>        
             </tr>
             <?php
@@ -142,7 +144,7 @@ $data_petugas = $db->readPetugas();
                 <th>No</th>
                 <th>Nama</th>
                 <th>Username</th>
-                <th>Action</th>
+                <th colspan="2">Action</th>
             </tr>
             <?php
                 $i = 1;
@@ -153,6 +155,7 @@ $data_petugas = $db->readPetugas();
                 <td><?php echo $i; ?></td>
                 <td><?php echo $data['nama_petugas']; ?></td>
                 <td><?php echo $data['username']; ?></td>
+                <td><a href=<?php ?>>Edit</a></td>
                 <td><a href=<?php echo "db.php?aksi=hapus&id=$id"?>>Delete</a></td>  
             </tr>
             <?php

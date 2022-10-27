@@ -50,6 +50,18 @@ class database{
         }
     }
 
+    function editAnggota($id, $nama){
+        $koneksi = mysqli_connect($this->dbHost, $this->dbUser, $this->dbPass, $this->dbName);
+        $query = mysqli_query($koneksi, "UPDATE tb_aggota SET nama_anggota = '$nama' WHERE id_anggota = $id;");
+
+        if($query){
+            echo "data berhasil dihapus";
+            header('location:perpus.php');
+        } else {
+            echo 'data gagal dihapus';
+        }
+    }
+
     function readBuku(){
         $koneksi = mysqli_connect($this->dbHost, $this->dbUser, $this->dbPass, $this->dbName);
         $query = mysqli_query($koneksi, "select * from tb_buku");
@@ -117,6 +129,8 @@ class database{
             echo 'data gagal dihapus';
         }
     }
+
+    
 }
 
 $db = new database();
@@ -168,4 +182,19 @@ if(isset($_GET['aksi'])){
         $id=$_GET['id'];
         $db->hapusPetugas($id);
     }
+}
+
+if(isset($_GET['aksi'])){
+    if(isset($_GET['aksi']) == 'edit'){
+
+        $id=$_GET['id'];
+        $db->editAnggota($id);
+    }
+}
+
+if(isset($_POST['submitAnggotaBaru'])){
+    $nama = $_POST['nama_buku'];
+    $pengarang = $_POST['nama_pengarang'];
+    $db->insertBuku($buku, $pengarang);
+
 }
