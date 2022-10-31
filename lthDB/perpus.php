@@ -95,7 +95,7 @@ $data_petugas = $db->readPetugas();
             <tr>
                 <td><?php echo $i; ?></td>
                 <td><?php echo $data['nama_anggota']; ?></td>
-                <td><a href="editAnggota.php">Edit</a></td>
+                <td><a href=<?php echo "editAnggota.php?aksi=update&id=$id" ?>>Edit</a></td>
                 <td><a href=<?php echo "db.php?aksi=hapus&id=$id"?>>Delete</a></td>
                 
             </tr>

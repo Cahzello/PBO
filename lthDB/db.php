@@ -130,6 +130,30 @@ class database{
         }
     }
 
+    function getAnggotaById($field, $id){
+        $koneksi = mysqli_connect($this->dbHost, $this->dbUser, $this->dbPass, $this->dbName);
+        $query = mysqli_query($koneksi, "SELECT * FROM tb_anggota WHERE id_anggota =" . $id ."");
+        $data = mysqli_fetch_array($query);
+
+
+        if($field == 'id_anggota'){
+            return $data['id_anggota'];
+        } else if ($field == 'nama_anggota') {
+            return $data['nama_anggota'];
+        }
+    }
+
+    function updateDataAnggota($id, $nama){
+        $koneksi = mysqli_connect($this->dbHost, $this->dbUser, $this->dbPass, $this->dbName);
+        $query = mysqli_query($koneksi, "UPDATE tb_anggota SET nama_anggota = '$nama' WHERE id_anggota = '$id' ");
+
+        if($query){
+            echo "Data Berhasil Diupdate";
+            header('location:perpus.php');
+        } else {
+            echo "Data Gagal Diupdate";
+        }
+    }
     
 }
 
@@ -144,6 +168,10 @@ $db->readPetugas();
 if(isset($_POST['submitAnggota'])){
     $nama = $_POST['nama_anggota'];
     $db->insertAnggota($nama);
+} else if (isset($_POST['prosesUpdate'])){
+    $id = $_POST['id_anggota'];
+    $nama = $_POST['nama_anggota'];
+    $db->updateDataAnggota($id, $nama);
 }
 
 if(isset($_POST['submitBuku'])){
@@ -173,7 +201,7 @@ if(isset($_GET['aksi'])){
 
         $id=$_GET['id'];
         $db->hapusBuku($id);
-    }
+    } 
 }
 
 if(isset($_GET['aksi'])){
@@ -185,16 +213,9 @@ if(isset($_GET['aksi'])){
 }
 
 if(isset($_GET['aksi'])){
-    if(isset($_GET['aksi']) == 'edit'){
+    if(isset($_GET['aksi']) == 'update'){
 
         $id=$_GET['id'];
-        $db->editAnggota($id);
     }
 }
 
-if(isset($_POST['submitAnggotaBaru'])){
-    $nama = $_POST['nama_buku'];
-    $pengarang = $_POST['nama_pengarang'];
-    $db->insertBuku($buku, $pengarang);
-
-}
