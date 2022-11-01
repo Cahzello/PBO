@@ -96,3 +96,7 @@ INSERT INTO obat values
 REVOKE INSERT ON apotek.obat FROM 'kasumi'@'localhost';
 
 GRANT ALL ON apotek. * TO 'kasumi'@'localhost';
+
+SELECT nilai.nis, nama_siswa, avg(nilai) as rata_rata from siswa, nilai where siswa.nis = nilai.nis group by nilai.nis;
+
+SELECT nilai.nis, nama_siswa, avg(nilai) as rata_rata from siswa, nilai where siswa.nis = nilai.nis group by nilai.nis order by rata_rata;
