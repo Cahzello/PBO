@@ -27,7 +27,7 @@ include "db.php";
 <body>
     <form action="db.php" method="POST">
         <div class="pensi">
-            <input type="hidden" name="id_anggota" value="<?php echo $id;?>">
+            <input type="hidden" name="id_anggota" value="<?php echo $id; ?>">
             Nama Anggota Yang Baru : <input type="text" name="nama_anggota" value="<?php echo $db->getAnggotaById('nama_anggota', $id); ?>">
             <br>
             <input type="submit" value="SIMPAN" name="prosesUpdate" value="UBAH">

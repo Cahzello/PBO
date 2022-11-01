@@ -80,9 +80,19 @@ select * from matapelajaran order by Nama_matpel asc;
 
 select * from siswa order by Nama_siswa desc;
 
+create user 'kasumi'@'localhost' IDENTIFIED BY '123456';
 
+DROP USER 'kasumi'@'localhost';
 
+create user 'kasumi'@'localhost' IDENTIFIED BY '123456';
 
+SHOW GRANTS FOR 'kasumi'@'localhost';
 
+GRANT INSERT ON apotek.obat TO 'kasumi'@'localhost';
 
+INSERT INTO obat values
+('OBT06', 'kadal', 'rokok', '9000000', '2002-08-12');
 
+REVOKE INSERT ON apotek.obat FROM 'kasumi'@'localhost';
+
+GRANT ALL ON apotek. * TO 'kasumi'@'localhost';
