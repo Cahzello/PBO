@@ -166,6 +166,18 @@ class database{
             echo "Data Gagal Diupdate";
         }
     }
+
+    function updateDataPetugas($id, $petugas, $username){
+        $koneksi = mysqli_connect($this->dbHost, $this->dbUser, $this->dbPass, $this->dbName);
+        $query = mysqli_query($koneksi, "UPDATE tb_petugas_perpus SET nama_petugas = '$petugas', username = '$username' WHERE id_petugas = '$id' ");
+
+        if($query){
+            echo "Data Berhasil Diupdate";
+            header('location:perpus.php');
+        } else {
+            echo "Data Gagal Diupdate";
+        }
+    }
     
 }
 
@@ -189,6 +201,11 @@ if(isset($_POST['submitAnggota'])){
     $buku = $_POST['namaBuku'];
     $pengarang = $_POST['namaPengarang'];
     $db->updateDataBuku($id, $buku, $pengarang);
+} else if (isset($_POST['prosesUpdatePetugas'])){
+    $id = $_POST['id_petugas'];
+    $petugas = $_POST['namaPetugas'];
+    $username = $_POST['username'];
+    $db->updateDataPetugas($id, $petugas, $username);
 }
 
 if(isset($_POST['submitBuku'])){

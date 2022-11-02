@@ -156,7 +156,7 @@ $data_petugas = $db->readPetugas();
                 <td><?php echo $i; ?></td>
                 <td><?php echo $data['nama_petugas']; ?></td>
                 <td><?php echo $data['username']; ?></td>
-                <td><a href=<?php ?>>Edit</a></td>
+                <td><a href=<?php echo "editPetugas.php?aksi=update&id=$id" ?>>Edit</a></td>
                 <td><a href=<?php echo "db.php?aksi=hapusPetugas&id=$id"?>>Delete</a></td>  
             </tr>
             <?php
