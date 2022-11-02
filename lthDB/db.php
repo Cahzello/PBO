@@ -189,27 +189,17 @@ if(isset($_POST['submitPetugas'])){
 }
 
 if(isset($_GET['aksi'])){
-    if(isset($_GET['aksi']) == 'hapus'){
-
+   if($_GET['aksi'] == 'hapusAnggota'){
         $id=$_GET['id'];
         $db->hapusAnggota($id);
-    }
-}
-
-if(isset($_GET['aksi'])){
-    if(isset($_GET['aksi']) == 'hapus'){
-
+   } else if ($_GET['aksi'] == 'hapusBuku'){
         $id=$_GET['id'];
         $db->hapusBuku($id);
-    } 
-}
-
-if(isset($_GET['aksi'])){
-    if(isset($_GET['aksi']) == 'hapus'){
-
+   } else if ($_GET['aksi'] == 'hapusPetugas'){
         $id=$_GET['id'];
         $db->hapusPetugas($id);
-    }
+   } 
+
 }
 
 if(isset($_GET['aksi'])){

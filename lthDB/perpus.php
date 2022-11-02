@@ -96,7 +96,7 @@ $data_petugas = $db->readPetugas();
                 <td><?php echo $i; ?></td>
                 <td><?php echo $data['nama_anggota']; ?></td>
                 <td><a href=<?php echo "editAnggota.php?aksi=update&id=$id" ?>>Edit</a></td>
-                <td><a href=<?php echo "db.php?aksi=hapus&id=$id"?>>Delete</a></td>
+                <td><a href=<?php echo "db.php?aksi=hapusAnggota&id=$id"?>>Delete</a></td>
                 
             </tr>
             <?php
@@ -126,7 +126,7 @@ $data_petugas = $db->readPetugas();
                 <td><?php echo $data['judul_buku']; ?></td>
                 <td><?php echo $data['pengarang']; ?></td>
                 <td><a href=<?php ?>>Edit</a></td>
-                <td><a href=<?php echo "db.php?aksi=hapus&id=$id"?>>Delete</a></td>        
+                <td><a href=<?php echo "db.php?aksi=hapusBuku&id=$id"?>>Delete</a></td>        
             </tr>
             <?php
                $i++; }
@@ -156,7 +156,7 @@ $data_petugas = $db->readPetugas();
                 <td><?php echo $data['nama_petugas']; ?></td>
                 <td><?php echo $data['username']; ?></td>
                 <td><a href=<?php ?>>Edit</a></td>
-                <td><a href=<?php echo "db.php?aksi=hapus&id=$id"?>>Delete</a></td>  
+                <td><a href=<?php echo "db.php?aksi=hapusPetugas&id=$id"?>>Delete</a></td>  
             </tr>
             <?php
                $i++; }
