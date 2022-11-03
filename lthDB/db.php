@@ -200,7 +200,7 @@ if(isset($_GET['aksi'])){
         $db->hapusPetugas($id);
    } 
 
-}
+}       
 
 if(isset($_GET['aksi'])){
     if(isset($_GET['aksi']) == 'update'){
