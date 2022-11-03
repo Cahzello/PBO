@@ -9,11 +9,15 @@
         body {
             margin: auto;
             text-align: center;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
         }
 
         .pensi {
             border: 1px solid black;
-            width: 40%;
+            width: auto;
             padding: 10px;
             margin: auto;
             margin-top: 15%;
@@ -26,9 +30,10 @@
             Nama Anggota : <input type="text"  name="nama_anggota">
             <br>
             <input type="submit" value="SIMPAN" name="submitAnggota">
-
+            <br>
+            <a href="perpus.php">Home</a>
+            
         </div>
     </form>
-    <a href="perpus.php">Home</a>
 </body>
 </html>

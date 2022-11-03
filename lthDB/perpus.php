@@ -26,7 +26,7 @@ $data_petugas = $db->readPetugas();
             margin: auto;
             text-align: center;
             font-family: Arial, Helvetica, sans-serif;
-            background-image: linear-gradient(to right, darkblue , darkgreen);
+            background-color: #eaeaea;
             min-height: 100vh;
             display: flex;
             justify-content: center;
@@ -52,7 +52,7 @@ $data_petugas = $db->readPetugas();
             margin-top: 10px;
             margin-bottom: 10px;
             border-radius: 10px;
-            background-color: lightgreen;
+            background-color: black;
         }
         
         a {
@@ -62,11 +62,12 @@ $data_petugas = $db->readPetugas();
 
         .btn > a {
             text-decoration: none;
-            color: black;
+            color: white;
         }
 
         .table {
             background-color: #eaeaea;
+            box-shadow: 6px 4px 20px black, -6px -4px 20px black;
             width: 50%;
             margin: auto;
             padding: 20px;
@@ -125,8 +126,8 @@ $data_petugas = $db->readPetugas();
                 <td><?php echo $i; ?></td>
                 <td><?php echo $data['judul_buku']; ?></td>
                 <td><?php echo $data['pengarang']; ?></td>
-                <td><a href=<?php ?>>Edit</a></td>
-                <td><a href=<?php echo "db.php?aksi=hapusBuku&id=$id"?>>Delete</a></td>        
+                <td><a href=<?php echo "editBuku.php?aksi=update&id=$id"?> >Edit</a></td>
+                <td><a href=<?php echo "db.php?aksi=hapusBuku&id=$id"?> >Delete</a></td>        
             </tr>
             <?php
                $i++; }
@@ -155,7 +156,7 @@ $data_petugas = $db->readPetugas();
                 <td><?php echo $i; ?></td>
                 <td><?php echo $data['nama_petugas']; ?></td>
                 <td><?php echo $data['username']; ?></td>
-                <td><a href=<?php ?>>Edit</a></td>
+                <td><a href=<?php echo "editPetugas.php?aksi=update&id=$id" ?>>Edit</a></td>
                 <td><a href=<?php echo "db.php?aksi=hapusPetugas&id=$id"?>>Delete</a></td>  
             </tr>
             <?php

@@ -154,6 +154,30 @@ class database{
             echo "Data Gagal Diupdate";
         }
     }
+
+    function updateDataBuku($id, $judul, $pengarang){
+        $koneksi = mysqli_connect($this->dbHost, $this->dbUser, $this->dbPass, $this->dbName);
+        $query = mysqli_query($koneksi, "UPDATE tb_buku SET judul_buku = '$judul', pengarang = '$pengarang' WHERE id_buku = '$id' ");
+
+        if($query){
+            echo "Data Berhasil Diupdate";
+            header('location:perpus.php');
+        } else {
+            echo "Data Gagal Diupdate";
+        }
+    }
+
+    function updateDataPetugas($id, $petugas, $username){
+        $koneksi = mysqli_connect($this->dbHost, $this->dbUser, $this->dbPass, $this->dbName);
+        $query = mysqli_query($koneksi, "UPDATE tb_petugas_perpus SET nama_petugas = '$petugas', username = '$username' WHERE id_petugas = '$id' ");
+
+        if($query){
+            echo "Data Berhasil Diupdate";
+            header('location:perpus.php');
+        } else {
+            echo "Data Gagal Diupdate";
+        }
+    }
     
 }
 
@@ -168,10 +192,20 @@ $db->readPetugas();
 if(isset($_POST['submitAnggota'])){
     $nama = $_POST['nama_anggota'];
     $db->insertAnggota($nama);
-} else if (isset($_POST['prosesUpdate'])){
+} else if (isset($_POST['prosesUpdateAnggota'])){
     $id = $_POST['id_anggota'];
     $nama = $_POST['nama_anggota'];
     $db->updateDataAnggota($id, $nama);
+} else if (isset($_POST['prosesUpdateBuku'])){
+    $id = $_POST['id_buku'];
+    $buku = $_POST['namaBuku'];
+    $pengarang = $_POST['namaPengarang'];
+    $db->updateDataBuku($id, $buku, $pengarang);
+} else if (isset($_POST['prosesUpdatePetugas'])){
+    $id = $_POST['id_petugas'];
+    $petugas = $_POST['namaPetugas'];
+    $username = $_POST['username'];
+    $db->updateDataPetugas($id, $petugas, $username);
 }
 
 if(isset($_POST['submitBuku'])){
