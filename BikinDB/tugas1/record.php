@@ -11,9 +11,9 @@ if(!$koneksi){
 }
 
 $profil = "INSERT INTO profil (nama, ttl, alamat, jenis_kelamin) values
-('Ganisa', '03-17-1975', 'Jl Sukma Jadi', 'Laki Laki'),  
-('Hikaru', '05-25-1874', 'Jl Jadi Jadi', 'Laki Laki'),  
-('Yazid', '09-14-1989', 'Jl Chad', 'Laki Laki')  
+('Ganisa', '1975-03-04', 'Jl Sukma Jadi', 'Laki Laki'),  
+('Hikaru', '1874-05-06', 'Jl Jadi Jadi', 'Laki Laki'),  
+('Yazid', '1989-09-08', 'Jl Chad', 'Laki Laki')  
 ";
 
 $nilai = "INSERT INTO nilai (nama, nilai_matematika, nilai_bahasaInggris, nilai_bahasaIndonesia) values
