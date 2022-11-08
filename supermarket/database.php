@@ -12,7 +12,7 @@ class database{
         if (!$koneksi){
             die("Koneksi ke DB gagal: " . mysqli_connect_error());
         } else {
-            echo "Koneksi ke DB {$this->dbName} Berhasil";
+            // echo "Koneksi ke DB {$this->dbName} Berhasil";
         }
     }
 
