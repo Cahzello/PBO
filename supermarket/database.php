@@ -32,7 +32,7 @@ class database{
 
         if($query){
             echo "Data berhasil ditambahkan";
-            header('location:homepage.php');
+            header('location:index.php');
         } else {
             echo "Penambahan Data Gagal";
         }
@@ -44,7 +44,7 @@ class database{
 
         if($query){
             echo "data berhasil dihapus";
-            header('location:homepage.php');
+            header('location:index.php');
         } else {
             echo 'data gagal dihapus';
         }
@@ -73,7 +73,7 @@ class database{
 
         if($query){
             echo "data berhasil dihapus";
-            header('location:homepage.php');
+            header('location:index.php');
         } else {
             echo 'data gagal dihapus';
         }

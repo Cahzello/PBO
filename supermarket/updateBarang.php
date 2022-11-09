@@ -37,6 +37,6 @@ include "database.php";
             <input type="submit" value="SIMPAN" name="prosesUpdateBarang" value="UBAH">
         </div>
     </form>
-    <a href="homepage.php">Home</a>
+    <a href="index.php">Home</a>
 </body>
 </html>

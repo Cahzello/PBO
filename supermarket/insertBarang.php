@@ -35,7 +35,7 @@
             <br>
             <input type="submit" value="SIMPAN" name="submitBarang">
             <br>
-            <a href="homepage.php">Home</a>
+            <a href="index.php">Home</a>
             
         </div>
     </form>

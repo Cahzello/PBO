@@ -35,7 +35,6 @@ $data_pembelian = $db->readPembelian();
         table {
             margin: auto;
             width: 60%;
-            /* padding: 10px; */
         }
         
         th, td {
