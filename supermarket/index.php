@@ -109,7 +109,7 @@ $data_pembelian = $db->readPembelian();
             ?>
         </table>
         <div class="btn">
-            <a href="insertBarang.php">Tambah Data Anggota</a>
+            <a href="insertBarang.php">Tambah Data Barang</a>
     
         </div>
                 
