@@ -3,6 +3,7 @@
 include 'database.php';
 
 $data_barang = $db->readBarang();
+$data_pembelian = $db->readPembelian();
 
 
 ?>
@@ -33,7 +34,7 @@ $data_barang = $db->readBarang();
 
         table {
             margin: auto;
-            width: 60%;
+            width: 50%;
             /* padding: 10px; */
         }
         
@@ -66,7 +67,7 @@ $data_barang = $db->readBarang();
         .table {
             background-color: #eaeaea;
             box-shadow: 6px 4px 20px black, -6px -4px 20px black;
-            width: 50%;
+            width: 80%;
             margin: auto;
             padding: 20px;
             border-radius: 40px;
@@ -79,12 +80,13 @@ $data_barang = $db->readBarang();
     <div class="table">
         
         <h3>Data Barang Supermarket</h3>
-        <table border="1" cellpadding="5px">
+        <table border="1" >
             <tr>
                 <th>No</th>
                 <th>Nama</th>
                 <th>Total Barang</th>
                 <th>Harga Barang</th>
+                <th>Total Harga</th>
                 <th colspan="2">Action</th>
             </tr>
             <?php
@@ -98,6 +100,7 @@ $data_barang = $db->readBarang();
                 <td><?php echo $data['nama_barang']; ?></td>
                 <td><?php echo $data['total_barang']; ?></td>
                 <td><?php echo $data['harga']; ?></td>
+                <td><?php echo $data['harga'] * $data['total_barang']; ?></td>
                 <td><a href=<?php echo "updateBarang.php?aksi=update&id=$id" ?>>Edit</a></td>
                 <td><a href=<?php echo "database.php?aksi=hapusBarang&id=$id"?>>Delete</a></td>
                 
@@ -110,7 +113,31 @@ $data_barang = $db->readBarang();
             <a href="insertBarang.php">Tambah Data Anggota</a>
     
         </div>
- 
+                
+        <h3>Daftar Pembelian</h3>
+        <table border="1" >
+            <tr>
+                <th>No</th>
+                <th>Tanggal Pembelian</th>
+                <th>Nama Barang</th>
+                <th>Quantity</th>
+            </tr>
+            <?php
+                $i = 1;
+                foreach($data_pembelian as $data){
+                    $id = $data['id_pembelian'];
+            ?>
+            <tr>
+                <td><?php echo $i; ?></td>
+                <td><?php echo $data['tanggal_pembelian']; ?></td>
+                <td><?php echo $data['id_barang']; ?></td>
+                <td><?php echo $data['quantity']; ?></td>
+            </tr>
+            <?php
+               $i++; }
+            ?>
+        </table>
+
     </div>
 
 </body>

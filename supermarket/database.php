@@ -79,6 +79,17 @@ class database{
         }
     }
 
+    function readPembelian(){
+        $koneksi = mysqli_connect($this->dbHost, $this->dbUser, $this->dbPass, $this->dbName);
+        $query = mysqli_query($koneksi, "select * from pembelian");
+
+        while ($row = mysqli_fetch_array($query)){
+            $data[]= $row;
+        }
+        return $data;
+    }
+
+
     
     
 }
@@ -86,6 +97,7 @@ class database{
 $db = new database();
 $db->connectMySQL();
 
+$db->readPembelian();
 $db->readBarang();
 // $db->insertAnggota($nama);
 

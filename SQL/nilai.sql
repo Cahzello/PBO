@@ -101,8 +101,35 @@ SELECT nilai.nis, nama_siswa, avg(nilai) as rata_rata from siswa, nilai where si
 
 SELECT nilai.nis, nama_siswa, avg(nilai) as rata_rata from siswa, nilai where siswa.nis = nilai.nis group by nilai.nis order by rata_rata;
 
-select nilai.nis, nama_siswa, min(nilai) as terkecil, max(nilai) as terbesar
-    from siswa,nilai 
-    where siswa.nis = nilai.nis
-    group by nilai.nis
+select nilai.nis, nama_siswa, min(nilai) as terkecil, max(nilai) as terbesar from siswa,
+    nilai where siswa.nis = nilai.nis group by nilai.nis
     ;
+
+select sum(nilai) from nilai;
+
+select nilai.nis, nama_siswa, sum(nilai) as total from siswa,
+    nilai where siswa.nis = nilai.nis group by nilai.nis
+;
+
+select barang.id_barang as nomor from barang,
+    pembelian where barang.id_barang = pembelian.id_barang group by pembelian.id_barang
+; 
+
+-- usfjusufsfjdsfjokldsjfokdshgjdfgjdgkjdrebgjrbj
+
+select nama_siswa from siswa where nama_siswa like '%ya%';
+
+select nilai from nilai order by nilai desc;
+
+select nama_siswa from siswa where nis='150150';
+
+select nama_guru from guru where nuptk='11003';
+
+select nuptk, nama_guru from guru where nama_guru like 'a%';
+
+select nama_matpel from matapelajaran where kode_mapel='003';
+
+select count(nama_matpel) from matapelajaran;
+
+
+
