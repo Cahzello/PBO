@@ -34,7 +34,7 @@ $data_pembelian = $db->readPembelian();
 
         table {
             margin: auto;
-            width: 50%;
+            width: 60%;
             /* padding: 10px; */
         }
         
@@ -64,10 +64,10 @@ $data_pembelian = $db->readPembelian();
             color: white;
         }
 
-        .table {
+        .card {
             background-color: #eaeaea;
             box-shadow: 6px 4px 20px black, -6px -4px 20px black;
-            width: 80%;
+            width: 50%;
             margin: auto;
             padding: 20px;
             border-radius: 40px;
@@ -77,7 +77,7 @@ $data_pembelian = $db->readPembelian();
     </style>
 </head>
 <body>
-    <div class="table">
+    <div class="card">
         
         <h3>Data Barang Supermarket</h3>
         <table border="1" >
