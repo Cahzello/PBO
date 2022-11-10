@@ -81,7 +81,17 @@ class database{
 
     function readPembelian(){
         $koneksi = mysqli_connect($this->dbHost, $this->dbUser, $this->dbPass, $this->dbName);
-        $query = mysqli_query($koneksi, "select * from pembelian");
+        $query = mysqli_query($koneksi, "SELECT * from pembelian");
+
+        while ($row = mysqli_fetch_array($query)){
+            $data[]= $row;
+        }
+        return $data;
+    }
+
+    function getNamaBarangById(){
+        $koneksi = mysqli_connect($this->dbHost, $this->dbUser, $this->dbPass, $this->dbName);
+        $query = mysqli_query($koneksi, "SELECT barang.nama_barang, pembelian.tanggal_pembelian, pembelian.quantity FROM barang LEFT JOIN pembelian ON barang.id_barang = pembelian.id_barang ORDER BY barang.id_barang");
 
         while ($row = mysqli_fetch_array($query)){
             $data[]= $row;
@@ -97,6 +107,7 @@ class database{
 $db = new database();
 $db->connectMySQL();
 
+$db->getNamaBarangById();
 $db->readPembelian();
 $db->readBarang();
 // $db->insertAnggota($nama);

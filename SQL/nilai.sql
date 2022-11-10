@@ -111,6 +111,11 @@ select nilai.nis, nama_siswa, sum(nilai) as total from siswa,
     nilai where siswa.nis = nilai.nis group by nilai.nis
 ;
 
+SELECT barang.nama_barang FROM barang INNER JOIN pembelian ON barang.id_barang = pembelian.id_barang;
+
+SELECT barang.nama_barang FROM barang LEFT JOIN pembelian ON barang.id_barang = pembelian.id_barang ORDER BY barang.id_barang;
+
+SELECT barang.nama_barang, pembelian.tanggal_pembelian, pembelian.quantity FROM barang LEFT JOIN pembelian ON barang.id_barang = pembelian.id_barang ORDER BY barang.id_barang;
 select barang.id_barang as nomor from barang,
     pembelian where barang.id_barang = pembelian.id_barang group by pembelian.id_barang
 ; 

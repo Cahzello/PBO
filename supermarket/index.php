@@ -4,7 +4,7 @@ include 'database.php';
 
 $data_barang = $db->readBarang();
 $data_pembelian = $db->readPembelian();
-
+$data_nama = $db->getNamaBarangById();
 
 ?>
 
@@ -124,12 +124,11 @@ $data_pembelian = $db->readPembelian();
             <?php
                 $i = 1;
                 foreach($data_pembelian as $data){
-                    $id = $data['id_pembelian'];
             ?>
             <tr>
                 <td><?php echo $i; ?></td>
-                <td><?php echo $data['tanggal_pembelian']; ?></td>
-                <td><?php echo $data['id_barang']; ?></td>
+                <td><?php echo $data['tanggal_pembelian'];  ?></td>
+                <td><?php echo $data['id_barang']?></td>
                 <td><?php echo $data['quantity']; ?></td>
             </tr>
             <?php
