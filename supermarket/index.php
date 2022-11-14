@@ -128,7 +128,7 @@ $data_nama = $db->getNamaBarangById();
             <tr>
                 <td><?php echo $i; ?></td>
                 <td><?php echo $data['tanggal_pembelian'];  ?></td>
-                <td><?php echo $data['id_barang']?></td>
+                <td><?php echo $data['nama_barang']?></td>
                 <td><?php echo $data['quantity']; ?></td>
             </tr>
             <?php

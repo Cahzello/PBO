@@ -81,7 +81,7 @@ class database{
 
     function readPembelian(){
         $koneksi = mysqli_connect($this->dbHost, $this->dbUser, $this->dbPass, $this->dbName);
-        $query = mysqli_query($koneksi, "SELECT * from pembelian");
+        $query = mysqli_query($koneksi, "SELECT * from pembelian JOIN barang ON pembelian.id_barang = barang.id_barang");
 
         while ($row = mysqli_fetch_array($query)){
             $data[]= $row;
