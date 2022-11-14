@@ -135,7 +135,9 @@ $data_nama = $db->getNamaBarangById();
                $i++; }
             ?>
         </table>
-
+        <div class="btn">
+            <a href="insertPembelian.php">Tambah Data Pembelian</a>
+        </div>
     </div>
 
 </body>

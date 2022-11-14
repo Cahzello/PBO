@@ -99,6 +99,9 @@ class database{
         return $data;
     }
 
+    function insertPembelian($tanggal, $kuantitas, $barang){
+
+    }
 
     
     
@@ -123,7 +126,12 @@ if(isset($_POST['submitBarang'])){
     $jumlah = $_POST['jumlah_barang'];
     $harga = $_POST['harga_barang'];
     $db->updateBarang($id, $barang, $jumlah, $harga);
-} 
+} else if (isset($_POST['submitPembelian'])){
+    $tanggal = $_POST['tanggal'];
+    $kuantitas = $_POST['kuatitas'];
+    $barang = $_POST[''];
+    $db->insertPembelian($tanggal, $kuantitas, $barang);
+}
 
 if(isset($_GET['aksi'])){
    if($_GET['aksi'] == 'hapusBarang'){
