@@ -89,28 +89,22 @@ class database{
         return $data;
     }
 
-    function getNamaBarangById(){
+    function insertPembelian($tanggal, $kuantitas){
         $koneksi = mysqli_connect($this->dbHost, $this->dbUser, $this->dbPass, $this->dbName);
-        $query = mysqli_query($koneksi, "SELECT barang.nama_barang, pembelian.tanggal_pembelian, pembelian.quantity FROM barang LEFT JOIN pembelian ON barang.id_barang = pembelian.id_barang ORDER BY barang.id_barang");
+        $query = mysqli_query($koneksi, "INSERT INTO pembelian (tanggal_pembelian, quantity) VALUE ('$tanggal', '$kuantitas')");
 
-        while ($row = mysqli_fetch_array($query)){
-            $data[]= $row;
+        if($query){
+            echo "Data berhasil ditambahkan";
+            header('location:index.php');
+        } else {
+            echo "Penambahan Data Gagal";
         }
-        return $data;
     }
-
-    function insertPembelian($tanggal, $kuantitas, $barang){
-
-    }
-
-    
-    
 }
 
 $db = new database();
 $db->connectMySQL();
 
-$db->getNamaBarangById();
 $db->readPembelian();
 $db->readBarang();
 // $db->insertAnggota($nama);
@@ -128,9 +122,8 @@ if(isset($_POST['submitBarang'])){
     $db->updateBarang($id, $barang, $jumlah, $harga);
 } else if (isset($_POST['submitPembelian'])){
     $tanggal = $_POST['tanggal'];
-    $kuantitas = $_POST['kuatitas'];
-    $barang = $_POST[''];
-    $db->insertPembelian($tanggal, $kuantitas, $barang);
+    $kuantitas = $_POST['kuantitas'];
+    $db->insertPembelian($tanggal, $kuantitas);
 }
 
 if(isset($_GET['aksi'])){

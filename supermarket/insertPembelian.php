@@ -1,3 +1,9 @@
+<?php
+
+include "database.php";
+
+$dataBeli = $db->readPembelian();
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -27,21 +33,29 @@
 <body>
     <form action="database.php" method="POST">
         <div class="pensi">
-            tanggal : <input type="date"  name="tanggal">
+            tanggal : <input type="date" name="tanggal">
             <br>
             <label for="barang-select">Pilih Barang</label>
             <select name="barang" id="barang-select">
                 <option value="">Pilih</option>
-                <option value=""><?php echo 'contoh'; ?></option>
+            <?php
+                $i = 1;
+                foreach($dataBeli as $data){
+            ?>
+                <option value="namaBarang"><?php echo $data['nama_barang']; ?></option>
+            <?php 
+                $i++; }
+            ?>
             </select>
             <br>
-            Quantity : <input type="number"  name="kuantitas">
+            Quantity : <input type="number" name="kuantitas">
             <br>
             <input type="submit" value="SIMPAN" name="submitPembelian">
             <br>
             <a href="index.php">Home</a>
-            
+
         </div>
     </form>
 </body>
+
 </html>

@@ -4,7 +4,6 @@ include 'database.php';
 
 $data_barang = $db->readBarang();
 $data_pembelian = $db->readPembelian();
-$data_nama = $db->getNamaBarangById();
 
 ?>
 
