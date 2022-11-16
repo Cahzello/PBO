@@ -113,6 +113,18 @@ class database{
             echo 'data gagal dihapus';
         }
     }
+
+    function updatePembelian($id, $tanggal, $idBarang, $qt){
+        $koneksi = mysqli_connect($this->dbHost, $this->dbUser, $this->dbPass, $this->dbName);
+        $query = mysqli_query($koneksi, "UPDATE barang SET tanggap_pembelian = '$tanggal', id_barang = '$idBarang', quantity = '$qt' WHERE id_pembelian = $id;");
+
+        if($query){
+            echo "data berhasil dihapus";
+            header('location:index.php');
+        } else {
+            echo 'data gagal dihapus';
+        }
+    }
 }
 
 $db = new database();
@@ -138,6 +150,8 @@ if(isset($_POST['submitBarang'])){
     $kuantitas = $_POST['kuantitas'];
     $barang = $_POST['barang'];
     $db->insertPembelian($tanggal, $kuantitas, $barang);
+} else if (isset($_POST[''])){
+    
 }
 
 if(isset($_GET['aksi'])){
