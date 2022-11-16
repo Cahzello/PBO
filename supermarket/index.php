@@ -154,7 +154,7 @@ $data_pembelian = $db->readPembelian();
             <?php
             $i = 1;
             foreach ($data_pembelian as $data) {
-                $id = $data['id_pembelian'];
+               $id = $data['id_pembelian'];
             ?>
                 <tr>
                     <td><?php echo $i; ?></td>

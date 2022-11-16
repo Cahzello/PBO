@@ -116,7 +116,7 @@ class database{
 
     function updatePembelian($id, $tanggal, $idBarang, $qt){
         $koneksi = mysqli_connect($this->dbHost, $this->dbUser, $this->dbPass, $this->dbName);
-        $query = mysqli_query($koneksi, "UPDATE barang SET tanggap_pembelian = '$tanggal', id_barang = '$idBarang', quantity = '$qt' WHERE id_pembelian = $id;");
+        $query = mysqli_query($koneksi, "UPDATE barang SET tanggal_pembelian = '$tanggal', id_barang = '$idBarang', quantity = '$qt' WHERE id_pembelian = $id;");
 
         if($query){
             echo "data berhasil dihapus";
@@ -124,6 +124,21 @@ class database{
         } else {
             echo 'data gagal dihapus';
         }
+    }
+
+    function getPembelianById($field, $id){
+        $koneksi = mysqli_connect($this->dbHost, $this->dbUser, $this->dbPass, $this->dbName);
+        $query = mysqli_query($koneksi, "SELECT * FROM barang WHERE id_pembelian =" . $id ."");
+        $data = mysqli_fetch_array($query);
+
+
+        if($field == 'tanggal'){
+            return $data['tanggal_pembelian'];
+        } else if ($field == 'namaBarang') {
+            return $data['nama_barang'];
+        } else if ($field == 'quantity'){
+            return $data['quantity'];
+        } 
     }
 }
 
@@ -150,8 +165,12 @@ if(isset($_POST['submitBarang'])){
     $kuantitas = $_POST['kuantitas'];
     $barang = $_POST['barang'];
     $db->insertPembelian($tanggal, $kuantitas, $barang);
-} else if (isset($_POST[''])){
-    
+} else if (isset($_POST['prosesUpdatePembelian'])){
+    $id = $_POST['id_pembelian'];
+    $tanggal = $_POST['tanggal'];
+    $barang = $_POST['namaBarang'];
+    $qt = $_POST['quantity'];
+    $db->updatePembelian($id ,$tanggal, $barang, $qt);
 }
 
 if(isset($_GET['aksi'])){
