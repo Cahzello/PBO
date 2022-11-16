@@ -89,15 +89,16 @@ class database{
         return $data;
     }
 
-    function insertPembelian($tanggal, $kuantitas){
+    function insertPembelian($tanggal, $kuantitas, $barang){
         $koneksi = mysqli_connect($this->dbHost, $this->dbUser, $this->dbPass, $this->dbName);
-        $query = mysqli_query($koneksi, "INSERT INTO pembelian (tanggal_pembelian, quantity) VALUE ('$tanggal', '$kuantitas')");
+        $query = mysqli_query($koneksi, "INSERT INTO pembelian (tanggal_pembelian, quantity, id_barang) VALUE ('$tanggal', '$kuantitas', '$barang')");
 
         if($query){
             echo "Data berhasil ditambahkan";
             header('location:index.php');
         } else {
-            echo "Penambahan Data Gagal";
+            echo "Penambahan Data Gagal" . "<br>";
+            echo mysqli_error($koneksi);
         }
     }
 }
@@ -123,7 +124,8 @@ if(isset($_POST['submitBarang'])){
 } else if (isset($_POST['submitPembelian'])){
     $tanggal = $_POST['tanggal'];
     $kuantitas = $_POST['kuantitas'];
-    $db->insertPembelian($tanggal, $kuantitas);
+    $barang = $_POST['barang'];
+    $db->insertPembelian($tanggal, $kuantitas, $barang);
 }
 
 if(isset($_GET['aksi'])){

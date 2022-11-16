@@ -51,8 +51,6 @@ $dataBeli = $db->readPembelian();
             Quantity : <input type="number" name="kuantitas">
             <br>
             <input type="submit" value="SIMPAN" name="submitPembelian">
-            <br>
-            <a href="index.php">Home</a>
 
         </div>
     </form>

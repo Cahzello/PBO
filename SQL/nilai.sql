@@ -136,7 +136,7 @@ select nama_matpel from matapelajaran where kode_mapel='003';
 
 select count(nama_matpel) from matapelajaran;
 
-
+select nis,nama_siswa,nilai, case when nilai <= 60 then 'remdial' else 'lulus' end as predikat from nilai;
 
 
 
