@@ -149,16 +149,20 @@ $data_pembelian = $db->readPembelian();
                 <th>Tanggal Pembelian</th>
                 <th>Nama Barang</th>
                 <th>Quantity</th>
+                <th colspan="2">Action</th>
             </tr>
             <?php
             $i = 1;
             foreach ($data_pembelian as $data) {
+                $id = $data['id_pembelian'];
             ?>
                 <tr>
                     <td><?php echo $i; ?></td>
                     <td><?php echo $data['tanggal_pembelian'];  ?></td>
                     <td><?php echo $data['nama_barang'] ?></td>
                     <td><?php echo $data['quantity']; ?></td>
+                    <td><a href=<?php echo "updatePembelian.php?aksi=update&id=$id" ?>>Edit</a></td>
+                    <td><a href=<?php echo "database.php?aksi=hapusPembelian&id=$id" ?>>Delete</a></td>
                 </tr>
             <?php
                 $i++;

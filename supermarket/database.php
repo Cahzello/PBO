@@ -101,6 +101,18 @@ class database{
             echo mysqli_error($koneksi);
         }
     }
+
+    function hapusPembelian($id){
+        $koneksi = mysqli_connect($this->dbHost, $this->dbUser, $this->dbPass, $this->dbName);
+        $query = mysqli_query($koneksi, "DELETE FROM pembelian WHERE id_pembelian =" . $id . "");
+
+        if($query){
+            echo "data berhasil dihapus";
+            header('location:index.php');
+        } else {
+            echo 'data gagal dihapus';
+        }
+    }
 }
 
 $db = new database();
@@ -134,7 +146,15 @@ if(isset($_GET['aksi'])){
         $db->hapusBarang($id);
    }
 
-}       
+}
+
+if(isset($_GET['aksi'])){
+    if($_GET['aksi'] == 'hapusPembelian'){
+         $id=$_GET['id'];
+         $db->hapusPembelian($id);
+    }
+ 
+ } 
 
 if(isset($_GET['aksi'])){
     if(isset($_GET['aksi']) == 'update'){
