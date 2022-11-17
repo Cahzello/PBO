@@ -1,7 +1,7 @@
 <?php
 include "database.php";
 $data_pembelian = $db->readPembelian();
-
+$data_barang = $db->readBarang();
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -31,14 +31,15 @@ $data_pembelian = $db->readPembelian();
     <form action="database.php" method="POST">
         <div class="pensi">
             <input type="hidden" name="id_pembelian" value="<?php echo $id; ?>">
+            <br>
             Nama barang Yang Baru : <input type="date" name="tanggal" value="<?php echo $db->getPembelianById('tanggal', $id); ?>">
             <br>
             <select name="namaBarang">
                 <option value="">Pilih</option>
                 <?php
-                foreach ($data_pembelian as $data) {
+                foreach ($data_barang as $data) {
                 ?>
-                    <option value="<?php echo $data['id_pembelian']; ?>"><?php echo $data['nama_barang']; ?></option>
+                    <option value="<?php echo $data['id_barang']; ?>"><?php echo $data['nama_barang']; ?></option>
                 <?php
                 }
                 ?>

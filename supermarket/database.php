@@ -114,15 +114,16 @@ class database{
         }
     }
 
-    function updatePembelian($id, $tanggal, $idBarang, $qt){
+    function updatePembelian($id, $tanggal, $barang, $qt){
         $koneksi = mysqli_connect($this->dbHost, $this->dbUser, $this->dbPass, $this->dbName);
-        $query = mysqli_query($koneksi, "UPDATE barang SET tanggal_pembelian = '$tanggal', id_barang = '$idBarang', quantity = '$qt' WHERE id_pembelian = $id;");
+        $query = mysqli_query($koneksi, "UPDATE pembelian SET tanggal_pembelian = '$tanggal', id_barang = '$barang', quantity = '$qt' WHERE id_pembelian = $id;");
 
         if($query){
             echo "data berhasil dihapus";
             header('location:index.php');
         } else {
-            echo 'data gagal dihapus';
+            echo 'Update Data Gagal' . "<br>" . "<br>";
+            echo mysqli_error($koneksi);
         }
     }
 
